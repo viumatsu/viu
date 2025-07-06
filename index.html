@@ -73,6 +73,7 @@
       justify-content: center;
       font-size: 24px;
       font-weight: 700;
+      color: white;
     }
     
     .logo-text {
@@ -136,9 +137,8 @@
     
     /* Hero Section */
     .hero {
-      background: linear-gradient(rgba(28, 46, 74, 0.9), rgba(28, 46, 74, 0.8)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600"><rect width="1200" height="600" fill="%231c2e4a"/><path d="M0,300 Q600,150 1200,300 L1200,600 L0,600 Z" fill="%232d3e5e"/></svg>');
-      background-size: cover;
-      background-position: center;
+      background: linear-gradient(rgba(28, 46, 74, 0.9), rgba(28, 46, 74, 0.8)), 
+                  radial-gradient(circle, #3a506b 0%, #1c2e4a 100%);
       color: var(--white);
       text-align: center;
       padding: 120px 20px;
@@ -154,6 +154,7 @@
       font-size: 48px;
       margin-bottom: 20px;
       line-height: 1.2;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
     
     .hero p {
@@ -317,12 +318,18 @@
       background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
       height: 400px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       color: white;
       font-size: 24px;
       text-align: center;
       padding: 20px;
+    }
+    
+    .about-image h3 {
+      margin-bottom: 15px;
+      font-size: 32px;
     }
     
     .about-content {
@@ -354,6 +361,9 @@
       color: var(--primary-dark);
       margin-bottom: 10px;
       font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
     
     /* Pricing Section */
@@ -392,12 +402,6 @@
       background: rgba(41, 163, 41, 0.05);
       border-radius: var(--border-radius);
       border: 1px solid rgba(41, 163, 41, 0.1);
-    }
-    
-    .pricing-step i {
-      font-size: 40px;
-      color: var(--accent-green);
-      margin-bottom: 15px;
     }
     
     .pricing-step h4 {
@@ -470,10 +474,12 @@
       margin-bottom: 20px;
     }
     
-    .contact-item i {
-      font-size: 20px;
-      color: var(--accent-green);
-      margin-top: 5px;
+    .contact-item div {
+      flex: 1;
+    }
+    
+    .contact-item h4 {
+      margin-bottom: 5px;
     }
     
     .contact-form {
@@ -621,80 +627,6 @@
       color: rgba(255, 255, 255, 0.6);
     }
     
-    /* Ícones como CSS */
-    .icon::before {
-      display: inline-block;
-      font-style: normal;
-      font-variant: normal;
-      text-rendering: auto;
-      -webkit-font-smoothing: antialiased;
-    }
-    
-    .icon-key::before {
-      content: "🔑";
-      font-size: 60px;
-    }
-    
-    .icon-home::before {
-      content: "🏠";
-      font-size: 60px;
-    }
-    
-    .icon-doc::before {
-      content: "📄";
-      font-size: 60px;
-    }
-    
-    .icon-ruler::before {
-      content: "📏";
-      font-size: 40px;
-    }
-    
-    .icon-location::before {
-      content: "📍";
-      font-size: 40px;
-    }
-    
-    .icon-couch::before {
-      content: "🛋️";
-      font-size: 40px;
-    }
-    
-    .icon-clock::before {
-      content: "⏱️";
-      font-size: 40px;
-    }
-    
-    .icon-whatsapp::before {
-      content: "📱";
-      font-size: 20px;
-    }
-    
-    .icon-email::before {
-      content: "✉️";
-      font-size: 20px;
-    }
-    
-    .icon-time::before {
-      content: "⏰";
-      font-size: 20px;
-    }
-    
-    .icon-map::before {
-      content: "🗺️";
-      font-size: 20px;
-    }
-    
-    .icon-bullseye::before {
-      content: "🎯";
-      font-size: 20px;
-    }
-    
-    .icon-eye::before {
-      content: "👁️";
-      font-size: 20px;
-    }
-    
     /* Responsivo */
     @media (max-width: 992px) {
       .about-container {
@@ -831,7 +763,7 @@
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">
-            <span class="icon icon-key"></span>
+            🔑
           </div>
           <div class="service-content">
             <h3>Vistoria de Entrada</h3>
@@ -848,7 +780,7 @@
         
         <div class="service-card">
           <div class="service-icon">
-            <span class="icon icon-home"></span>
+            🏠
           </div>
           <div class="service-content">
             <h3>Vistoria de Saída</h3>
@@ -865,7 +797,7 @@
         
         <div class="service-card">
           <div class="service-icon">
-            <span class="icon icon-doc"></span>
+            📄
           </div>
           <div class="service-content">
             <h3>Vistorias Extras</h3>
@@ -898,11 +830,11 @@
         
         <div class="mission-vision">
           <div>
-            <h4><span class="icon icon-bullseye"></span> Missão</h4>
+            <h4>🎯 Missão</h4>
             <p>Garantir segurança jurídica, transparência e documentação completa nas relações de locação, prevenindo conflitos e proporcionando tranquilidade para ambas as partes.</p>
           </div>
           <div>
-            <h4><span class="icon icon-eye"></span> Visão</h4>
+            <h4>👁️ Visão</h4>
             <p>Tornar-nos referência em vistorias técnicas na região noroeste do Paraná, ampliando nossa atuação com excelência técnica e inovação constante.</p>
           </div>
         </div>
@@ -925,26 +857,22 @@
           
           <div class="pricing-steps">
             <div class="pricing-step">
-              <span class="icon icon-ruler"></span>
-              <h4>Metragem</h4>
+              <h4>📏 Metragem</h4>
               <p>O tamanho do imóvel em metros quadrados influencia diretamente no tempo necessário para a vistoria completa.</p>
             </div>
             
             <div class="pricing-step">
-              <span class="icon icon-location"></span>
-              <h4>Localização</h4>
+              <h4>📍 Localização</h4>
               <p>Imóveis localizados em diferentes cidades ou bairros podem ter variações devido aos custos de deslocamento.</p>
             </div>
             
             <div class="pricing-step">
-              <span class="icon icon-couch"></span>
-              <h4>Mobiliado</h4>
+              <h4>🛋️ Mobiliado</h4>
               <p>Imóveis mobiliados exigem mais tempo para documentação dos itens, afetando o valor final.</p>
             </div>
             
             <div class="pricing-step">
-              <span class="icon icon-clock"></span>
-              <h4>Urgência</h4>
+              <h4>⏱️ Urgência</h4>
               <p>Serviços com prazo de execução reduzido podem ter acréscimo devido à priorização do trabalho.</p>
             </div>
           </div>
@@ -967,7 +895,7 @@
         
         <div class="contact-details">
           <div class="contact-item">
-            <span class="icon icon-whatsapp"></span>
+            <div>📱</div>
             <div>
               <h4>WhatsApp</h4>
               <p>(44) 99999-9999</p>
@@ -975,7 +903,7 @@
           </div>
           
           <div class="contact-item">
-            <span class="icon icon-email"></span>
+            <div>✉️</div>
             <div>
               <h4>E-mail</h4>
               <p>contato@viuvistorias.com.br</p>
@@ -983,7 +911,7 @@
           </div>
           
           <div class="contact-item">
-            <span class="icon icon-time"></span>
+            <div>⏰</div>
             <div>
               <h4>Horário de Atendimento</h4>
               <p>Segunda a Sexta: 08h às 18h</p>
@@ -992,7 +920,7 @@
           </div>
           
           <div class="contact-item">
-            <span class="icon icon-map"></span>
+            <div>🗺️</div>
             <div>
               <h4>Área de Atuação</h4>
               <p>Umuarama e região noroeste do Paraná</p>
@@ -1116,6 +1044,11 @@
             top: target.offsetTop - 80,
             behavior: 'smooth'
           });
+          
+          // Fechar menu mobile após clicar em um link
+          if (window.innerWidth <= 768) {
+            document.querySelector('nav ul').style.display = 'none';
+          }
         }
       });
     });
