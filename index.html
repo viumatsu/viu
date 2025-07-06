@@ -1,136 +1,1045 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VIU – Vistorias Imóveis Umuarama</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIU – Vistorias Imóveis Umuarama | Profissionalismo e Confiança</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary-dark: #1c2e4a;
+      --primary-medium: #2d3e5e;
+      --accent-green: #29a329;
+      --accent-light: #4ab84a;
+      --light-bg: #f8f9fc;
+      --text-dark: #333;
+      --text-medium: #555;
+      --text-light: #777;
+      --white: #ffffff;
+      --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      --border-radius: 12px;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #f2f4f7;
-      color: #333;
-      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
     }
-    .logo {
-      max-width: 140px;
-      margin-bottom: 20px;
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
+    
+    /* Header */
     header {
-      background: linear-gradient(to right, #1c2e4a, #2d3e5e);
-      color: white;
-      text-align: center;
-      padding: 80px 20px 50px;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
+      color: var(--white);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .logo-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-light) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    
+    .logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+    }
+    
+    .logo-text h1 {
+      font-size: 28px;
+      letter-spacing: 1px;
+      line-height: 1.2;
+    }
+    
+    .logo-text p {
+      font-size: 14px;
+      opacity: 0.9;
+      letter-spacing: 1px;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+    
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: all 0.3s ease;
       position: relative;
     }
-    header h1 { font-size: 36px; margin-bottom: 10px; }
-    header p { font-size: 18px; margin-bottom: 30px; }
-    .btn {
-      background: #29a329;
-      padding: 14px 28px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 50px;
-      transition: 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    
+    nav a:hover {
+      color: var(--accent-green);
     }
-    .btn:hover { background: #228b22; transform: scale(1.05); }
-    .banner {
+    
+    nav a::after {
+      content: '';
       position: absolute;
-      bottom: -30px;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent-green);
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(28, 46, 74, 0.9), rgba(28, 46, 74, 0.8)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80');
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 48px;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 40px;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: linear-gradient(to right, var(--accent-green), var(--accent-light));
+      color: var(--white);
+      padding: 16px 40px;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(41, 163, 41, 0.3);
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(41, 163, 41, 0.4);
+    }
+    
+    .btn i {
+      margin-right: 10px;
+    }
+    
+    /* Services Section */
+    .section {
+      padding: 100px 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-title h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 40px;
+      color: var(--primary-dark);
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: #ffffff;
-      color: #1c2e4a;
-      padding: 20px 30px;
-      border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, var(--accent-green), var(--accent-light));
+      border-radius: 2px;
+    }
+    
+    .section-title p {
+      color: var(--text-medium);
       font-size: 18px;
+      max-width: 700px;
+      margin: 25px auto 0;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .service-card {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .service-icon {
+      height: 180px;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      color: var(--white);
+    }
+    
+    .service-content {
+      padding: 30px;
+    }
+    
+    .service-content h3 {
+      font-size: 24px;
+      color: var(--primary-dark);
+      margin-bottom: 15px;
+    }
+    
+    .service-content p {
+      color: var(--text-medium);
+      margin-bottom: 20px;
+    }
+    
+    .service-content ul {
+      margin-top: 15px;
+      padding-left: 20px;
+    }
+    
+    .service-content li {
+      margin-bottom: 8px;
+      color: var(--text-medium);
+      position: relative;
+    }
+    
+    .service-content li::before {
+      content: '•';
+      color: var(--accent-green);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    
+    .highlight {
+      background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-light) 100%);
+      color: var(--white);
+      padding: 5px 15px;
+      border-radius: 30px;
+      display: inline-block;
+      font-size: 14px;
+      margin-top: 15px;
       font-weight: 500;
     }
-    section {
-      padding: 60px 20px 40px;
-      max-width: 1000px;
-      margin: 60px auto 0;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    
+    /* About Section */
+    .about {
+      background: var(--white);
+      position: relative;
     }
-    section h2 {
-      font-size: 28px;
-      color: #1c2e4a;
-      margin-bottom: 25px;
-      border-left: 5px solid #29a329;
-      padding-left: 12px;
+    
+    .about-container {
+      display: flex;
+      align-items: center;
+      gap: 50px;
     }
-    section h3 {
-      margin-top: 20px;
-      color: #29a329;
+    
+    .about-image {
+      flex: 1;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    
+    .about-image:hover img {
+      transform: scale(1.05);
+    }
+    
+    .about-content {
+      flex: 1;
+    }
+    
+    .about-content h3 {
+      font-size: 32px;
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+    }
+    
+    .about-content p {
+      color: var(--text-medium);
+      margin-bottom: 20px;
+    }
+    
+    .mission-vision {
+      margin-top: 30px;
+      display: flex;
+      gap: 30px;
+    }
+    
+    .mission-vision div {
+      flex: 1;
+    }
+    
+    .mission-vision h4 {
+      color: var(--primary-dark);
+      margin-bottom: 10px;
       font-size: 20px;
     }
-    section p { margin-top: 5px; }
-    footer {
-      background-color: #1c2e4a;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 60px;
-      font-size: 14px;
+    
+    /* Pricing Section */
+    .pricing {
+      background: var(--light-bg);
     }
-    @media (max-width: 600px) {
-      header h1 { font-size: 28px; }
-      header p { font-size: 16px; }
-      .banner { font-size: 16px; padding: 15px 20px; }
-      .btn { padding: 12px 24px; font-size: 14px; }
-      .logo { max-width: 100px; }
+    
+    .pricing-container {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      padding: 50px;
+      box-shadow: var(--shadow);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .pricing-content h3 {
+      font-size: 28px;
+      color: var(--primary-dark);
+      margin-bottom: 25px;
+      text-align: center;
+    }
+    
+    .pricing-steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    .pricing-step {
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+      padding: 25px;
+      background: rgba(41, 163, 41, 0.05);
+      border-radius: var(--border-radius);
+      border: 1px solid rgba(41, 163, 41, 0.1);
+    }
+    
+    .pricing-step i {
+      font-size: 40px;
+      color: var(--accent-green);
+      margin-bottom: 15px;
+    }
+    
+    .pricing-step h4 {
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+    
+    .pricing-step p {
+      color: var(--text-medium);
+    }
+    
+    .pricing-cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+    
+    .pricing-cta p {
+      margin-bottom: 25px;
+      font-size: 18px;
+      color: var(--text-medium);
+    }
+    
+    /* Contact Section */
+    .contact {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
+      color: var(--white);
+      position: relative;
+    }
+    
+    .contact::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f8f9fc' fill-opacity='1' d='M0,160L48,149.3C96,139,192,117,288,122.7C384,128,480,160,576,170.7C672,181,768,171,864,149.3C960,128,1056,96,1152,90.7C1248,85,1344,107,1392,117.3L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+      background-size: cover;
+    }
+    
+    .contact-container {
+      display: flex;
+      gap: 50px;
+      padding-top: 60px;
+    }
+    
+    .contact-info {
+      flex: 1;
+    }
+    
+    .contact-info h3 {
+      font-size: 32px;
+      margin-bottom: 25px;
+    }
+    
+    .contact-info p {
+      margin-bottom: 25px;
+      opacity: 0.9;
+      max-width: 500px;
+    }
+    
+    .contact-details {
+      margin-top: 30px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .contact-item i {
+      font-size: 20px;
+      color: var(--accent-green);
+      margin-top: 5px;
+    }
+    
+    .contact-form {
+      flex: 1;
+      background: var(--white);
+      border-radius: var(--border-radius);
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+    
+    .contact-form h3 {
+      color: var(--primary-dark);
+      margin-bottom: 25px;
+      font-size: 24px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent-green);
+    }
+    
+    .form-group textarea {
+      height: 150px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(to right, var(--accent-green), var(--accent-light));
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(41, 163, 41, 0.4);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: var(--white);
+      padding: 40px 0 20px;
+    }
+    
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+    
+    .footer-col {
+      flex: 1;
+      min-width: 250px;
+    }
+    
+    .footer-col h4 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--accent-green);
+    }
+    
+    .footer-col p, .footer-col a {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 10px;
+      display: block;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-col a:hover {
+      color: var(--accent-green);
+      padding-left: 5px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: var(--white);
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background: var(--accent-green);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .about-container {
+        flex-direction: column;
+      }
+      
+      .contact-container {
+        flex-direction: column;
+      }
+      
+      .hero h1 {
+        font-size: 40px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .hero {
+        padding: 80px 20px;
+      }
+      
+      .hero h1 {
+        font-size: 32px;
+      }
+      
+      .hero p {
+        font-size: 18px;
+      }
+      
+      .section {
+        padding: 70px 0;
+      }
+      
+      .section-title h2 {
+        font-size: 32px;
+      }
+      
+      .pricing-container {
+        padding: 30px;
+      }
+      
+      .mission-vision {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .logo-text h1 {
+        font-size: 22px;
+      }
+      
+      .hero h1 {
+        font-size: 28px;
+      }
+      
+      .btn {
+        padding: 14px 30px;
+        font-size: 16px;
+      }
+      
+      .section-title h2 {
+        font-size: 28px;
+      }
+      
+      .service-icon {
+        height: 150px;
+        font-size: 50px;
+      }
+      
+      .contact-form {
+        padding: 25px;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <img src="logo.png" alt="Logo VIU" class="logo">
-    <h1>VIU – Vistorias Imóveis Umuarama</h1>
-    <p>Deixando registros para o seu BEM</p>
-    <a class="btn" href="https://wa.me/5544999777023?text=Olá,%20quero%20solicitar%20uma%20vistoria%20com%20a%20VIU" target="_blank">
-      Solicitar Vistoria
-    </a>
-    <div class="banner">
-      Atendemos imóveis em Umuarama e toda a região com agilidade e precisão!
+    <div class="container header-container">
+      <div class="logo">
+        <div class="logo-icon">VIU</div>
+        <div class="logo-text">
+          <h1>VIU</h1>
+          <p>VISTORIAS IMÓVEIS UMUARAMA</p>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#sobre">Sobre Nós</a></li>
+          <li><a href="#precos">Preços</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
     </div>
   </header>
-  <section>
-    <h2>Nossos Serviços</h2>
-    <h3>Vistoria de Entrada</h3>
-    <p>Registro técnico e fotográfico do estado atual do imóvel antes da locação.</p>
-    <h3>Vistoria de Saída</h3>
-    <p>Comparação direta com a vistoria de entrada, destacando danos ou alterações.</p>
-    <h3>Vistorias Extras</h3>
-    <p>Relatórios sob demanda para disputas contratuais, renovações ou apoio jurídico.</p>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <h1>Vistorias Imobiliárias Profissionais em Umuarama</h1>
+      <p>Proteção jurídica e documentação técnica completa para proprietários e inquilinos</p>
+      <a href="#contato" class="btn"><i class="fab fa-whatsapp"></i> Solicitar Vistoria</a>
+    </div>
   </section>
-  <section>
-    <h2>Sobre a VIU</h2>
-    <p>
-      A VIU nasceu da necessidade de laudos técnicos claros e imparciais para proteger proprietários e inquilinos.
-      Atuamos com seriedade, rapidez e precisão, entregando relatórios digitais em PDF, com fotos de alta resolução
-      e organização técnica por ambiente.
-    </p>
-    <p><strong>Missão:</strong> Garantir segurança, transparência e documentação completa nas relações de locação.</p>
-    <p><strong>Atuação:</strong> Atendemos imóveis residenciais e comerciais em Umuarama e região.</p>
+
+  <!-- Services Section -->
+  <section class="section" id="servicos">
+    <div class="container">
+      <div class="section-title">
+        <h2>Nossos Serviços</h2>
+        <p>Documentação técnica completa para garantir a segurança na locação de imóveis</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-key"></i>
+          </div>
+          <div class="service-content">
+            <h3>Vistoria de Entrada</h3>
+            <p>Registro detalhado do estado do imóvel antes do inquilino se mudar, criando um documento base para futuras comparações.</p>
+            <ul>
+              <li>Fotografias de alta resolução de todos os ambientes</li>
+              <li>Descrição técnica de pisos, paredes, portas e janelas</li>
+              <li>Verificação de instalações elétricas e hidráulicas</li>
+              <li>Documentação de itens mobiliados (se aplicável)</li>
+            </ul>
+            <div class="highlight">Exemplo: Registro de pequenas rachaduras existentes na parede da sala para que não sejam atribuídas ao inquilino posteriormente.</div>
+          </div>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-home"></i>
+          </div>
+          <div class="service-content">
+            <h3>Vistoria de Saída</h3>
+            <p>Análise comparativa do estado atual do imóvel com a vistoria de entrada, identificando alterações e possíveis danos.</p>
+            <ul>
+              <li>Comparação detalhada ambiente por ambiente</li>
+              <li>Identificação de danos e desgastes ocorridos durante a locação</li>
+              <li>Documentação de itens faltantes ou danificados</li>
+              <li>Relatório técnico para solução de conflitos</li>
+            </ul>
+            <div class="highlight">Exemplo: Identificação de furos na parede para instalação de TV, manchas no carpete ou danos em móveis fornecidos pelo proprietário.</div>
+          </div>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-file-contract"></i>
+          </div>
+          <div class="service-content">
+            <h3>Vistorias Extras</h3>
+            <p>Serviços especializados para necessidades específicas durante o período de locação.</p>
+            <ul>
+              <li>Vistorias periódicas de acompanhamento</li>
+              <li>Vistorias para renovação de contrato</li>
+              <li>Documentação para processos jurídicos</li>
+              <li>Vistorias específicas para seguro fiança</li>
+              <li>Avaliação de danos por eventos específicos</li>
+            </ul>
+            <div class="highlight">Exemplo: Vistoria semestral para verificar o estado de conservação do imóvel durante locações de longo prazo.</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
-  <section>
-    <h2>Contato</h2>
-    <p><strong>WhatsApp:</strong> <a href="https://wa.me/5544999777023" target="_blank">+55 (44) 9 9977-7023</a></p>
-    <p><strong>E-mail:</strong> <a href="mailto:vistoriasimoveisumuarama@gmail.com">vistoriasimoveisumuarama@gmail.com</a></p>
-    <p><strong>Atendimento:</strong> Segunda a sexta, das 08h às 18h</p>
-    <p><strong>Área de cobertura:</strong> Umuarama e região</p>
-    <a class="btn" href="https://wa.me/5544999777023?text=Olá,%20quero%20solicitar%20uma%20vistoria%20com%20a%20VIU" target="_blank">
-      Falar no WhatsApp
-    </a>
+
+  <!-- About Section -->
+  <section class="section about" id="sobre">
+    <div class="container about-container">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Equipe VIU realizando vistoria">
+      </div>
+      <div class="about-content">
+        <h3>Sobre a VIU - Vistorias Imóveis Umuarama</h3>
+        <p>A VIU nasceu da necessidade de oferecer laudos técnicos claros, imparciais e detalhados que protejam tanto proprietários quanto inquilinos durante o processo de locação imobiliária. Atuamos em Umuarama e região com comprometimento, agilidade e precisão técnica.</p>
+        <p>Nossa equipe é formada por profissionais especializados que utilizam tecnologia de ponta para criar relatórios digitais completos em formato PDF, contendo fotografias de alta resolução organizadas por ambiente e descrições técnicas detalhadas.</p>
+        
+        <div class="mission-vision">
+          <div>
+            <h4><i class="fas fa-bullseye"></i> Missão</h4>
+            <p>Garantir segurança jurídica, transparência e documentação completa nas relações de locação, prevenindo conflitos e proporcionando tranquilidade para ambas as partes.</p>
+          </div>
+          <div>
+            <h4><i class="fas fa-eye"></i> Visão</h4>
+            <p>Tornar-nos referência em vistorias técnicas na região noroeste do Paraná, ampliando nossa atuação com excelência técnica e inovação constante.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
+
+  <!-- Pricing Section -->
+  <section class="section pricing" id="precos">
+    <div class="container">
+      <div class="section-title">
+        <h2>Nossos Preços</h2>
+        <p>Orçamento personalizado conforme as características específicas do seu imóvel</p>
+      </div>
+      
+      <div class="pricing-container">
+        <div class="pricing-content">
+          <h3>Como calculamos o valor da vistoria</h3>
+          <p>O preço do nosso serviço é determinado por vários fatores que garantem um orçamento justo e personalizado para cada situação. Entre em contato para receber uma proposta específica para seu imóvel.</p>
+          
+          <div class="pricing-steps">
+            <div class="pricing-step">
+              <i class="fas fa-ruler-combined"></i>
+              <h4>Metragem</h4>
+              <p>O tamanho do imóvel em metros quadrados influencia diretamente no tempo necessário para a vistoria completa.</p>
+            </div>
+            
+            <div class="pricing-step">
+              <i class="fas fa-map-marker-alt"></i>
+              <h4>Localização</h4>
+              <p>Imóveis localizados em diferentes cidades ou bairros podem ter variações devido aos custos de deslocamento.</p>
+            </div>
+            
+            <div class="pricing-step">
+              <i class="fas fa-couch"></i>
+              <h4>Mobiliado</h4>
+              <p>Imóveis mobiliados exigem mais tempo para documentação dos itens, afetando o valor final.</p>
+            </div>
+            
+            <div class="pricing-step">
+              <i class="fas fa-clock"></i>
+              <h4>Urgência</h4>
+              <p>Serviços com prazo de execução reduzido podem ter acréscimo devido à priorização do trabalho.</p>
+            </div>
+          </div>
+          
+          <div class="pricing-cta">
+            <p>Solicite agora mesmo um orçamento personalizado sem compromisso</p>
+            <a href="#contato" class="btn"><i class="fas fa-calculator"></i> Solicitar Orçamento</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact" id="contato">
+    <div class="container contact-container">
+      <div class="contact-info">
+        <h3>Entre em Contato</h3>
+        <p>Estamos à disposição para esclarecer dúvidas, fornecer orçamentos e agendar vistorias em Umuarama e região.</p>
+        
+        <div class="contact-details">
+          <div class="contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <div>
+              <h4>WhatsApp</h4>
+              <p>(44) 99999-9999</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>E-mail</h4>
+              <p>contato@viuvistorias.com.br</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h4>Horário de Atendimento</h4>
+              <p>Segunda a Sexta: 08h às 18h</p>
+              <p>Sábado: 08h às 12h</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Área de Atuação</h4>
+              <p>Umuarama e região noroeste do Paraná</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <h3>Solicite um Orçamento</h3>
+        <form>
+          <div class="form-group">
+            <label for="name">Nome Completo</label>
+            <input type="text" id="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Telefone</label>
+            <input type="tel" id="phone" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Mensagem</label>
+            <textarea id="message" required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Enviar Solicitação</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    © 2025 VIU – Vistorias Imóveis Umuarama. Atendemos Umuarama e toda a região.
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-col">
+          <div class="logo">
+            <div class="logo-icon">VIU</div>
+            <div class="logo-text">
+              <h1>VIU</h1>
+              <p>VISTORIAS IMÓVEIS UMUARAMA</p>
+            </div>
+          </div>
+          <p>Documentação técnica completa para sua segurança e tranquilidade na locação de imóveis.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Serviços</h4>
+          <a href="#servicos">Vistoria de Entrada</a>
+          <a href="#servicos">Vistoria de Saída</a>
+          <a href="#servicos">Vistorias Extras</a>
+          <a href="#precos">Solicitar Orçamento</a>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Links Rápidos</h4>
+          <a href="#home">Início</a>
+          <a href="#sobre">Sobre Nós</a>
+          <a href="#precos">Preços</a>
+          <a href="#contato">Contato</a>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Umuarama, PR</p>
+          <p><i class="fas fa-phone"></i> (44) 99999-9999</p>
+          <p><i class="fas fa-envelope"></i> contato@viuvistorias.com.br</p>
+          <p><i class="fas fa-clock"></i> Seg-Sex: 08h às 18h</p>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2025 VIU - Vistorias Imóveis Umuarama. Todos os direitos reservados.</p>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    // Simple mobile menu toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      const nav = document.querySelector('nav ul');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    });
+    
+    // Form submission handling
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Solicitação enviada com sucesso! Entraremos em contato em breve.');
+      this.reset();
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
