@@ -290,6 +290,72 @@
       border: 1px solid var(--gray-300);
     }
     
+    /* Benefits Section (NOVO) */
+    .benefits {
+      background: var(--white);
+    }
+    
+    .benefits-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .highlight-box {
+      background: var(--gray-100);
+      border-radius: var(--border-radius);
+      padding: 30px;
+      margin: 40px 0;
+      border: 1px solid var(--gray-200);
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    
+    .benefit-item {
+      background: var(--white);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border: 1px solid var(--gray-200);
+    }
+    
+    .benefit-icon {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+    
+    .benefit-item h5 {
+      font-size: 18px;
+      color: var(--gray-800);
+      margin-bottom: 10px;
+    }
+    
+    .benefit-item p {
+      font-size: 15px;
+      color: var(--gray-600);
+    }
+    
+    .benefits-note {
+      font-style: italic;
+      color: var(--gray-600);
+      text-align: center;
+      margin: 30px 0;
+    }
+    
+    .benefits-cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+    
+    .benefits-cta p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+    
     /* About Section */
     .about {
       background: var(--white);
@@ -659,6 +725,10 @@
       .header-banner {
         height: 150px;
       }
+      
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
     
     @media (max-width: 768px) {
@@ -714,6 +784,10 @@
       .logo-img {
         height: 50px;
       }
+      
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
     }
     
     @media (max-width: 480px) {
@@ -762,6 +836,7 @@
         <ul>
           <li><a href="#home">Início</a></li>
           <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#beneficios">Benefícios</a></li>
           <li><a href="#sobre">Sobre Nós</a></li>
           <li><a href="#precos">Preços</a></li>
           <li><a href="#contato">Contato</a></li>
@@ -840,6 +915,64 @@
               <li>Avaliação de danos por eventos específicos</li>
             </ul>
             <div class="highlight">Exemplo: Vistoria semestral para verificar o estado de conservação do imóvel durante locações de longo prazo.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section (NOVA SEÇÃO) -->
+  <section class="section benefits" id="beneficios">
+    <div class="container">
+      <div class="section-title">
+        <h2>Por que Fazer Vistoria?</h2>
+        <p>A documentação técnica prévia é a melhor forma de evitar conflitos e garantir direitos na locação imobiliária</p>
+      </div>
+
+      <div class="benefits-content">
+        <div class="benefits-text">
+          <p>A vistoria técnica no início da locação estabelece um registro imparcial que serve como referência legal para proprietários e inquilinos. Este documento detalhado previne discussões sobre o estado do imóvel e assegura transparência na relação contratual.</p>
+          
+          <div class="highlight-box">
+            <h4>5 Vantagens Essenciais:</h4>
+            <div class="benefits-grid">
+              <div class="benefit-item">
+                <div class="benefit-icon">🛡️</div>
+                <h5>Proteção ao Inquilino</h5>
+                <p>Resguarda contra cobranças indevidas por danos já existentes antes da ocupação, com comprovação documental.</p>
+              </div>
+              
+              <div class="benefit-item">
+                <div class="benefit-icon">🏡</div>
+                <h5>Segurança ao Proprietário</h5>
+                <p>Registro comprobatório do estado original do imóvel para eventual comparação na devolução.</p>
+              </div>
+              
+              <div class="benefit-item">
+                <div class="benefit-icon">🤝</div>
+                <h5>Harmonia Contratual</h5>
+                <p>Reduz significativamente disputas através de um laudo técnico detalhado e incontestável.</p>
+              </div>
+              
+              <div class="benefit-item">
+                <div class="benefit-icon">🔧</div>
+                <h5>Verificação de Manutenção</h5>
+                <p>Confirma se todas as revisões necessárias foram realizadas antes da ocupação.</p>
+              </div>
+              
+              <div class="benefit-item">
+                <div class="benefit-icon">⏱️</div>
+                <h5>Agilidade na Devolução</h5>
+                <p>Facilita a liberação de caução ao final do contrato com documentação organizada.</p>
+              </div>
+            </div>
+          </div>
+          
+          <p class="benefits-note">Nossos laudos incluem fotografia profissional, descrição técnica de todos os componentes do imóvel e relatório organizado por ambientes, atendendo aos requisitos legais.</p>
+          
+          <div class="benefits-cta">
+            <p>Garanta sua tranquilidade: <strong>(44) 8813-9293</strong> | <strong>vistoriasimoveisumuarama@gmail.com</strong></p>
+            <a href="#contato" class="btn">Agendar Vistoria</a>
           </div>
         </div>
       </div>
@@ -928,7 +1061,7 @@
             <div>📱</div>
             <div>
               <h4>WhatsApp</h4>
-              <p>(44) 99999-9999</p>
+              <p>(44) 8813-9293</p>
             </div>
           </div>
           
@@ -936,7 +1069,7 @@
             <div>✉️</div>
             <div>
               <h4>E-mail</h4>
-              <p>contato@viuvistorias.com.br</p>
+              <p>vistoriasimoveisumuarama@gmail.com</p>
             </div>
           </div>
           
@@ -1016,6 +1149,7 @@
         <div class="footer-col">
           <h4>Links Rápidos</h4>
           <a href="#home">Início</a>
+          <a href="#beneficios">Benefícios</a>
           <a href="#sobre">Sobre Nós</a>
           <a href="#precos">Preços</a>
           <a href="#contato">Contato</a>
@@ -1024,8 +1158,8 @@
         <div class="footer-col">
           <h4>Contato</h4>
           <p>Umuarama, PR</p>
-          <p>(44) 99999-9999</p>
-          <p>contato@viuvistorias.com.br</p>
+          <p>(44) 8813-9293</p>
+          <p>vistoriasimoveisumuarama@gmail.com</p>
           <p>Seg-Sex: 08h às 18h</p>
         </div>
       </div>
