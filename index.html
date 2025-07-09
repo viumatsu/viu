@@ -44,10 +44,18 @@
     }
     
     /* Header */
+    .header-banner {
+      background-image: url('https://github.com/viumatsu/viu/blob/main/Banneer.png?raw=true');
+      background-size: cover;
+      background-position: center;
+      height: 200px;
+      width: 100%;
+    }
+    
     header {
-      background: linear-gradient(135deg, var(--gray-800) 0%, var(--gray-900) 100%);
+      background: var(--gray-900);
       color: var(--white);
-      padding: 20px 0;
+      padding: 15px 0;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -66,36 +74,9 @@
       gap: 15px;
     }
     
-    .logo-icon {
-      width: 50px;
-      height: 50px;
-      background: var(--gray-700);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      font-weight: 700;
-      color: white;
-      border: 2px solid var(--gray-500);
-    }
-    
-    .logo-text {
-      font-weight: 800;
-    }
-    
-    .logo-text h1 {
-      font-size: 28px;
-      letter-spacing: 1px;
-      line-height: 1.2;
-      color: var(--white);
-    }
-    
-    .logo-text p {
-      font-size: 14px;
-      opacity: 0.9;
-      letter-spacing: 1px;
-      color: var(--gray-300);
+    .logo-img {
+      height: 60px;
+      width: auto;
     }
     
     nav ul {
@@ -147,7 +128,7 @@
                   radial-gradient(circle, #555 0%, #333 100%);
       color: var(--white);
       text-align: center;
-      padding: 120px 20px;
+      padding: 80px 20px;
       position: relative;
     }
     
@@ -674,6 +655,10 @@
       .hero h1 {
         font-size: 40px;
       }
+      
+      .header-banner {
+        height: 150px;
+      }
     }
     
     @media (max-width: 768px) {
@@ -694,7 +679,7 @@
       }
       
       .hero {
-        padding: 80px 20px;
+        padding: 60px 20px;
       }
       
       .hero h1 {
@@ -721,13 +706,17 @@
         flex-direction: column;
         gap: 20px;
       }
+      
+      .header-banner {
+        height: 120px;
+      }
+      
+      .logo-img {
+        height: 50px;
+      }
     }
     
     @media (max-width: 480px) {
-      .logo-text h1 {
-        font-size: 22px;
-      }
-      
       .hero h1 {
         font-size: 28px;
       }
@@ -748,19 +737,26 @@
       .contact-form {
         padding: 25px;
       }
+      
+      .header-banner {
+        height: 100px;
+      }
+      
+      .logo-img {
+        height: 45px;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Banner Header -->
+  <div class="header-banner"></div>
+  
   <!-- Header -->
   <header>
     <div class="container header-container">
       <div class="logo">
-        <div class="logo-icon">VIU</div>
-        <div class="logo-text">
-          <h1>VIU</h1>
-          <p>VISTORIAS IMÓVEIS UMUARAMA</p>
-        </div>
+        <img src="https://github.com/viumatsu/viu/blob/main/logo.png?raw=true" alt="VIU Vistorias Imóveis Umuarama" class="logo-img">
       </div>
       <nav>
         <ul>
@@ -998,11 +994,7 @@
       <div class="footer-container">
         <div class="footer-col">
           <div class="logo">
-            <div class="logo-icon">VIU</div>
-            <div class="logo-text">
-              <h1>VIU</h1>
-              <p>VISTORIAS IMÓVEIS UMUARAMA</p>
-            </div>
+            <img src="https://github.com/viumatsu/viu/blob/main/logo.png?raw=true" alt="VIU Vistorias Imóveis Umuarama" class="logo-img">
           </div>
           <p>Documentação técnica completa para sua segurança e tranquilidade na locação de imóveis.</p>
           <div class="social-links">
